@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  app:
+    ports:
+      - "4005:80"
+    container_name: twin-clone
+    image: twin-clone
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - REACT_APP_BASE_URL=${REACT_APP_BASE_URL}
